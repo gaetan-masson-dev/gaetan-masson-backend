@@ -19,6 +19,7 @@ export default ({ env }) => {
           cipher: env('DATABASE_SSL_CIPHER', undefined),
           rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', true),
         },
+        family: 4, // Use IPv4
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
     },
@@ -39,6 +40,7 @@ export default ({ env }) => {
           rejectUnauthorized: false,
 
         },
+        family: 4, // Use IPv4
         schema: env('DATABASE_SCHEMA', 'public'),
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
